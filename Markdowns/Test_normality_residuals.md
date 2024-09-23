@@ -12,7 +12,7 @@ Here is an example:
 
 Lets create a response variable “y” that is normally distributed, but is
 also dependent on a two factor categorical predictor “x” of levels “A”
-and “B”. We should have 100 observations of the response variable for
+and “B”. We should have 50 observations of the response variable for
 each level of x. Level A will have a expected value of 25, and level B
 an expected value of 75, both with a constant standard deviation of 15.
 
