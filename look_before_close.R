@@ -3,7 +3,7 @@
 
 
 #install.packages("renv")
-#renv::init()
+renv::init()
 
 #Snapshot?
 renv::snapshot()
