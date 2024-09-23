@@ -51,9 +51,10 @@ shapiro.test(y)
     ## data:  y
     ## W = 0.96348, p-value = 0.007177
 
-This is because even though our data was not generated from a single
-normal distribution, but two! That is because we have two categories, A
-and B! We could test whether A and B alone are normally distributed:
+This is because our data was not generated from a single normal
+distribution, but two! We have two categories, A and B, and this must be
+accounted for! We could test whether A and B alone are normally
+distributed:
 
 First A
 
