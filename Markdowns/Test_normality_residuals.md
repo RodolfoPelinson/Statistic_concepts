@@ -74,7 +74,7 @@ shapiro.test(y_A)
     ## data:  y_A
     ## W = 0.96399, p-value = 0.1306
 
-Appears to also be normally distributed.
+Appears to be normally distributed.
 
 Now B.
 
@@ -94,7 +94,9 @@ shapiro.test(y_B)
     ## data:  y_B
     ## W = 0.98451, p-value = 0.7505
 
-But, this is hard to do for more complex models and the more efficitent
+Also normally distributed.
+
+But, this is hard to do for more complex models and the more efficient
 way to do this is by testing normality on the residuals of a model that
 assumes that errors (or residuals) are normally distributed. This is
 because the residuals are free from the effect of the predictor x as

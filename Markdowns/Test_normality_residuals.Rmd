@@ -48,7 +48,7 @@ hist(y_A, breaks = seq(from = min(y_A), to = max(y_A), length.out = 10))
 shapiro.test(y_A)
 ```
 
-Appears to also be normally distributed.
+Appears to be normally distributed.
 
 
 Now B.
@@ -59,8 +59,10 @@ hist(y_B, breaks = seq(from = min(y_B), to = max(y_B), length.out = 10))
 shapiro.test(y_B)
 ```
 
+Also normally distributed.
 
-But, this is hard to do for more complex models and the more efficitent way to do this is by testing normality on the residuals of a model that assumes that errors (or residuals) are normally distributed. This is because the residuals are free from the effect of the predictor x as they force A and B to have the same expected value, which is zero.
+
+But, this is hard to do for more complex models and the more efficient way to do this is by testing normality on the residuals of a model that assumes that errors (or residuals) are normally distributed. This is because the residuals are free from the effect of the predictor x as they force A and B to have the same expected value, which is zero.
 
 ```{r}
 mod <- lm(y~x)
