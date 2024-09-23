@@ -62,7 +62,7 @@ shapiro.test(y_B)
 Also normally distributed.
 
 
-But, this is hard to do for more complex models and the more efficient way to do this is by testing normality on the residuals of a model that assumes that errors (or residuals) are normally distributed. This is because the residuals are free from the effect of the predictor x as they force A and B to have the same expected value, which is zero.
+But, this is hard to do for more complex models and the more efficient way to do this is by testing normality on the residuals of a model that assumes that errors (or residuals) are normally distributed. This is because the residuals are free from the effect of the predictor x as it forces A and B to have the same expected value, which is zero.
 
 ```{r}
 mod <- lm(y~x)
