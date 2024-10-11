@@ -27,8 +27,7 @@ install.packages("DHARMa")
 install.packages("bbmle")
 install.packages("TMB")
 install.packages("Matrix")
-
-
+install.packages("MuMIn")
 
 #install.packages("spaa")
 #install.packages("doParallel")
