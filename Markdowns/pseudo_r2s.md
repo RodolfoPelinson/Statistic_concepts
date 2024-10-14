@@ -14,7 +14,8 @@ plot(y ~ x)
 
 ![](pseudo_r2s_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
 
-Now lets compute the regular coefficient of determination
+Now lets compute the regular coefficient of determination, including
+using a function from package MuMIn
 
 ``` r
 model <- lm(y~x)
@@ -23,7 +24,47 @@ model0 <- lm(y~1)
 regular_r2 <- summary(model)$r.squared
 mcfadden_r2 <- c(1 - (logLik(model)/logLik(model0)))
 LR_r2 <- (deviance(model0) - deviance(model))/ deviance(model0)
+
+#Another way to compute if we do not have access to the deviance
+
+n<-length(y)
+
+LR_r2_2 <- 1 - exp( - (2/n)  * ( (logLik(model)) -  logLik(model0) ) )
+
+#Package MuMIn has a function to calculate LR R²
+library(MuMIn)
+LR_r2_3 <- r.squaredLR(model)
+
+regular_r2
 ```
+
+    ## [1] 0.6352171
+
+``` r
+LR_r2
+```
+
+    ## [1] 0.6352171
+
+``` r
+LR_r2_2
+```
+
+    ## 'log Lik.' 0.6352171 (df=3)
+
+``` r
+LR_r2_3
+```
+
+    ## [1] 0.6352171
+    ## attr(,"adj.r.squared")
+    ## [1] 0.6352293
+
+``` r
+mcfadden_r2
+```
+
+    ## [1] 0.09288576
 
 Now lets simulate some scenarios and see how things vary according to a
 large variation in r² values.

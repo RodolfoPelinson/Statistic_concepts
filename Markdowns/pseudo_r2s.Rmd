@@ -13,7 +13,7 @@ y <- rnorm(50, mean = 10 + 1.5*x, sd = 30)
 plot(y ~ x)
 ```
 
-Now lets compute the regular coefficient of determination
+Now lets compute the regular coefficient of determination, including using a function from package MuMIn
 ```{r}
 model <- lm(y~x)
 model0 <- lm(y~1)
@@ -21,6 +21,22 @@ model0 <- lm(y~1)
 regular_r2 <- summary(model)$r.squared
 mcfadden_r2 <- c(1 - (logLik(model)/logLik(model0)))
 LR_r2 <- (deviance(model0) - deviance(model))/ deviance(model0)
+
+#Another way to compute if we do not have access to the deviance
+
+n<-length(y)
+
+LR_r2_2 <- 1 - exp( - (2/n)  * ( (logLik(model)) -  logLik(model0) ) )
+
+#Package MuMIn has a function to calculate LR R²
+library(MuMIn)
+LR_r2_3 <- r.squaredLR(model)
+
+regular_r2
+LR_r2
+LR_r2_2
+LR_r2_3
+mcfadden_r2
 ```
 
 
